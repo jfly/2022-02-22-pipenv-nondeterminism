@@ -5,6 +5,8 @@ This repro contains an example of some pipenv nondeterminism I've run into.
 Each time you run `pipenv lock` with the `Pipfile` in here, you'll end up with
 different markers for `greenlet`.
 
+I've filed this issue upstream: https://github.com/pypa/pipenv/issues/4967
+
 Demo:
 
     $ docker run $(docker build -q https://github.com/jfly/2022-02-22-pipenv-nondeterminism.git#main)
