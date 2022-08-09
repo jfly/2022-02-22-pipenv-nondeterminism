@@ -6,8 +6,10 @@ RUN apt-get update && \
         python3-pip \
         jq
 
-RUN pip3 install -U pip==22.2.2  # the latest version as of 2022-08-09
-RUN pip3 install -U pipenv==2022.8.5  # the latest version as of 2022-08-09
+ARG PIP_VERSION
+RUN pip3 install -U pip==$PIP_VERSION
+ARG PIPENV_VERSION
+RUN pip3 install -U pipenv==$PIPENV_VERSION
 
 WORKDIR /app
 COPY stress-lock.sh .
